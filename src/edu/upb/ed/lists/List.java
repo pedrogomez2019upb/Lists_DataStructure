@@ -41,6 +41,10 @@ public class List {
         size--;
     }
 
+    public void add(int position){
+
+    }
+
     public List(Object object){
         head= new ListNode(object);
         tail =head;
