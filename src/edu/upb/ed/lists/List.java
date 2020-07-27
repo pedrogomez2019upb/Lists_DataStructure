@@ -4,15 +4,14 @@ public class List {
 
     public ListNode head;
     public ListNode tail;
+    public int size;
 
     public List(){
         head = null;
         tail =null;
 
     }
-    public List(Object object){
-        add(object);
-    }
+
     public List(Object object){
         head= new ListNode(object);
         tail =head;

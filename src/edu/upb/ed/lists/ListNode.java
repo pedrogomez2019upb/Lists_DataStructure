@@ -4,10 +4,11 @@ public class ListNode {
     private Object object;
     public ListNode next;
 
-    public ListNode(Object object, ListNode next) {
+    public ListNode(Object object) {
         this.object = object;
         this.next = next;
     }
+    public ListNode(){}
 
     public Object getObject() {
         return object;
@@ -17,6 +18,10 @@ public class ListNode {
         this.object = object;
     }
 
+    public void linkNext(ListNode n)
+    {
+        next=n;
+    }
     public ListNode getNext() {
         return next;
     }
