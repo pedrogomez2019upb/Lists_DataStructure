@@ -9,7 +9,36 @@ public class List {
     public List(){
         head = null;
         tail =null;
+        size=0;
 
+    }
+
+    public void insert(int position,Object object){
+        if (position >= 0 && position<=size){
+            ListNode newNode = new ListNode();
+            newNode.setObject(object);
+            ListNode aux=head;
+            for(int i=0;i<(position-1);i++)
+            {
+                aux=aux.getNext();
+            }
+            ListNode nNext=aux.getNext();
+            aux.setNext(newNode);
+            newNode.setNext(nNext);
+            size++;
+        }
+    }
+
+    public void removeTail(int position)
+    {
+        ListNode aux=head;
+        for(int i=0;i<position-1;i++)
+        {
+            aux=aux.getNext();
+        }
+        ListNode nNext=aux.getNext();
+        aux.setNext(nNext.getNext());
+        size--;
     }
 
     public List(Object object){
