@@ -13,6 +13,11 @@ public class List {
 
     }
 
+    public List(Object object)
+    {
+        //add(object);
+    }
+
     public void insert(int position,Object object){
         if (position >= 0 && position<=size){
             ListNode newNode = new ListNode();
@@ -45,10 +50,13 @@ public class List {
 
     }
 
+    /*
     public List(Object object){
         head= new ListNode(object);
         tail =head;
     }
+
+     */
     public boolean isEmpty(){
         return head == null;
     }
