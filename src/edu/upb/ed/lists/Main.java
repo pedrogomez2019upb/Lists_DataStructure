@@ -8,5 +8,10 @@ public class Main {
 	    list1.add(i);
     }
 
+	for(ListNode node=list1.head;node !=null;node=node.next)
+    {
+        System.out.println(node.toString());
+    }
+
     }
 }
