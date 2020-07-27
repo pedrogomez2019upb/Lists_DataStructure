@@ -1,5 +1,7 @@
 package edu.upb.ed.lists;
 
+import java.util.Iterator;
+
 public class List {
 
     public ListNode head;
@@ -59,5 +61,22 @@ public class List {
      */
     public boolean isEmpty(){
         return head == null;
+    }
+
+    @Override
+    public Iterator<ListNode> iterator()
+    {
+        //ni=head;
+        Iterator <ListNode> i =new Iterator<ListNode>() {
+            @Override
+            public boolean hasNext() {
+                return false;
+            }
+
+            @Override
+            public ListNode next() {
+                return null;
+            }
+        }
     }
 }
