@@ -42,9 +42,22 @@ public class List {
         }
     }
 
-    public void removeTail(int position) {
+    public void addEnd(Object object){
+
+        if(!isEmpty()){
+            tail.next=new ListNode(object);
+            tail=tail.next;
+        }else {
+            head=tail=new ListNode(object);
+        }
+        size++;
+    }
+
+    public void removeTail(int position)
+    {
         ListNode aux = head;
-        for (int i = 0; i < position - 1; i++) {
+        for (int i = 0; i < position - 1; i++)
+        {
             aux = aux.getNext();
         }
         ListNode nNext = aux.getNext();
@@ -112,6 +125,8 @@ public class List {
     public boolean isEmpty(){
         return head == null;
     }
+
+
 /*
     @Override
     public Iterator<ListNode> iterator()
@@ -131,7 +146,9 @@ public class List {
         };
 
 
-     */
+
+ */
+
 
     }
 

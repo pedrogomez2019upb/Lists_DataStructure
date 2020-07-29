@@ -4,17 +4,20 @@ public class ListNode {
     private Object object;
     public ListNode next;
 
-    public ListNode(Object object) {
+    public ListNode(Object object)
+    {
         this.object = object;
         this.next = next;
     }
     public ListNode(){}
 
-    public Object getObject() {
+    public Object getObject()
+    {
         return object;
     }
 
-    public void setObject(Object object) {
+    public void setObject(Object object)
+    {
         this.object = object;
     }
 
@@ -22,16 +25,19 @@ public class ListNode {
     {
         next=n;
     }
-    public ListNode getNext() {
+    public ListNode getNext()
+    {
         return next;
     }
 
-    public void setNext(ListNode next) {
+    public void setNext(ListNode next)
+    {
         this.next = next;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "ListNode{" +
                 "object=" + object +
                 ", next=" + next +
