@@ -78,7 +78,19 @@ public class List {
         if(!isEmpty())
         {
             ListNode aux=head;
+            int i =0;
+            while (aux!=null)
+            {
+                System.out.println(i+".["+aux.getObject()+"]"+"-> ");
+                aux=aux.getNext();
+                i++;
+            }
         }
+    }
+
+    public int size()
+    {
+        return size;
     }
 
     public boolean isEmpty(){
