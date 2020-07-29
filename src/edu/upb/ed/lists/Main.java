@@ -14,5 +14,12 @@ public class Main {
         System.out.println(node.toString());
     }
 
+        for(int i=10;i<20;i++){
+            list1.addTail(i);
+        }
+        for(ListNode node=list1.head;node !=null;node=node.next)
+        {
+            System.out.println(node.toString());
+        }
     }
 }

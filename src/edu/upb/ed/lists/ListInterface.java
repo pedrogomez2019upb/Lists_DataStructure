@@ -8,15 +8,15 @@ public interface ListInterface
     /*
     essential operations
     */
-    public boolean isEmpty();
+    public boolean isEmpty(); //OK
 
-    public int getSize();
+    public int getSize(); //Ok
 
-    public void clear();
+    public void clear(); //Pendiente
 
-    public Object getHead();
+    public Object getHead();//SOSO
 
-    public Object getTail();
+    public Object getTail();//SOSO
 
     public Object get(ListNode node);
 
@@ -34,7 +34,7 @@ public interface ListInterface
 
     public boolean set(ListNode node, Object object);
 
-    public boolean remove(ListNode node);
+    public boolean remove(ListNode node);//Ok
 
     /*
     expansion operations

@@ -68,6 +68,22 @@ public class List {
         size ++;
     }
 
+    public void addTail(Object object)
+    {
+        if(tail==null){
+            tail = new ListNode(object);
+            head = tail;
+        }
+        else
+        {
+            ListNode temporalNode=tail;
+            ListNode newNode=new ListNode(object);
+            newNode.linkNext(temporalNode);
+            tail=newNode;
+        }
+        size ++;
+    }
+
 
     public List(Object object){
         head= new ListNode(object);
