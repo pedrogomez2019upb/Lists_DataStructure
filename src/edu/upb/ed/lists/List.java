@@ -120,7 +120,7 @@ public class List {
     public int size()
     {
         return size;
-    }
+    }//
 
     public boolean isEmpty(){
         return head == null;
