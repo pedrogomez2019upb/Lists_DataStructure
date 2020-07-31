@@ -11,6 +11,11 @@ public class ListNode {
     }
     public ListNode(){}
 
+    public ListNode(Object object, ListNode next) {
+        this.object = object;
+        this.next = next;
+    }
+
     public Object getObject()
     {
         return object;

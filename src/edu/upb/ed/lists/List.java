@@ -2,154 +2,132 @@ package edu.upb.ed.lists;
 
 import java.util.Iterator;
 
-public class List {
+public class List implements ListInterface{
 
-    public ListNode head;
-    public ListNode tail;
-    public int size;
-
-    public List() {
-        head = null;
-        tail = null;
-        size = 0;
-
-    }
-
-    public Object get(int index)
-    {
-        int counter=0;
-        ListNode temporalNode=head;
-        while (counter<index){
-            temporalNode=temporalNode.getNext();
-            counter++;
-        }
-        return temporalNode.getObject();
-    }
-
-
-    public void insert(int position, Object object) {
-        if (position >= 0 && position <= size) {
-            ListNode newNode = new ListNode();
-            newNode.setObject(object);
-            ListNode aux = head;
-            for (int i = 0; i < (position - 1); i++) {
-                aux = aux.getNext();
-            }
-            ListNode nNext = aux.getNext();
-            aux.setNext(newNode);
-            newNode.setNext(nNext);
-            size++;
-        }
-    }
-
-    public void addEnd(Object object){
-
-        if(!isEmpty()){
-            tail.next=new ListNode(object);
-            tail=tail.next;
-        }else {
-            head=tail=new ListNode(object);
-        }
-        size++;
-    }
-
-    public void removeTail(int position)
-    {
-        ListNode aux = head;
-        for (int i = 0; i < position - 1; i++)
-        {
-            aux = aux.getNext();
-        }
-        ListNode nNext = aux.getNext();
-        aux.setNext(nNext.getNext());
-        size--;
-    }
-
-    public void add(Object object)
-    {
-        if(head==null){
-            head = new ListNode(object);
-            tail = head;
-        }
-        else
-        {
-           ListNode temporalNode=head;
-           ListNode newNode=new ListNode(object);
-           newNode.linkNext(temporalNode);
-           head=newNode;
-        }
-        size ++;
-    }
-
-    public void addTail(Object object)
-    {
-        if(tail==null){
-            tail = new ListNode(object);
-            head = tail;
-        }
-        else
-        {
-            ListNode temporalNode=tail;
-            ListNode newNode=new ListNode(object);
-            newNode.linkNext(temporalNode);
-            tail=newNode;
-        }
-        size ++;
-    }
-
-
-    public List(Object object){
-        head= new ListNode(object);
-        tail =head;
-    }
-
-    public void seeList(){
-        if(!isEmpty())
-        {
-            ListNode aux=head;
-            int i =0;
-            while (aux!=null)
-            {
-                System.out.println(i+".["+aux.getObject()+"]"+"-> ");
-                aux=aux.getNext();
-                i++;
-            }
-        }
-    }
-
-    public int size()
-    {
-        return size;
-    }//
-
-    public boolean isEmpty(){
-        return head == null;
-    }
-
-
-/*
     @Override
-    public Iterator<ListNode> iterator()
-    {
-        //ni=head;
-        Iterator <ListNode> i =new Iterator<ListNode>() {
-            @Override
-            public boolean hasNext() {
-                return false;
-            }
+    public boolean isEmpty() {
+        return false;
+    }
 
-            @Override
-            public ListNode next() {
-                return null;
-            }
+    @Override
+    public int getSize() {
+        return 0;
+    }
 
-        };
-
-
-
- */
-
+    @Override
+    public void clear() {
 
     }
+
+    @Override
+    public Object getHead() {
+        return null;
+    }
+
+    @Override
+    public Object getTail() {
+        return null;
+    }
+
+    @Override
+    public Object get(ListNode node) {
+        return null;
+    }
+
+    @Override
+    public Object search(Object object) {
+        return null;
+    }
+
+    @Override
+    public boolean add(Object object) {
+        return false;
+    }
+
+    @Override
+    public boolean insert(ListNode node, Object object) {
+        return false;
+    }
+
+    @Override
+    public boolean insert(Object ob, Object object) {
+        return false;
+    }
+
+    @Override
+    public boolean insertHead(Object object) {
+        return false;
+    }
+
+    @Override
+    public boolean insertTail(Object object) {
+        return false;
+    }
+
+    @Override
+    public boolean set(ListNode node, Object object) {
+        return false;
+    }
+
+    @Override
+    public boolean remove(ListNode node) {
+        return false;
+    }
+
+    @Override
+    public boolean contains(Object object) {
+        return false;
+    }
+
+    @Override
+    public boolean isEquals(Object object) {
+        return false;
+    }
+
+    @Override
+    public Iterator<ListNode> iterator() {
+        return null;
+    }
+
+    @Override
+    public Object[] toArray() {
+        return new Object[0];
+    }
+
+    @Override
+    public Object[] toArray(Object[] object) {
+        return new Object[0];
+    }
+
+    @Override
+    public Object getBeforeTo() {
+        return null;
+    }
+
+    @Override
+    public Object getBeforeTo(ListNode node) {
+        return null;
+    }
+
+    @Override
+    public Object getNextTo() {
+        return null;
+    }
+
+    @Override
+    public Object getNextTo(ListNode node) {
+        return null;
+    }
+
+    @Override
+    public List subList(ListNode from, ListNode to) {
+        return null;
+    }
+
+    @Override
+    public List sortList() {
+        return null;
+    }
+}
 
 
