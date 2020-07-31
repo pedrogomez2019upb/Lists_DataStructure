@@ -8,6 +8,7 @@ public interface ListInterface
     /*
     essential operations
     */
+
     public boolean isEmpty(); //OK
 
     public int getSize(); //Ok
@@ -42,12 +43,12 @@ public interface ListInterface
 
     public void removeTail(int position);//Ok
 
-
-
+    public ListNode rec(ListNode node);
 
     /*
     expansion operations
      */
+
     public boolean contains(Object object);
 
     public boolean isEquals(Object object);

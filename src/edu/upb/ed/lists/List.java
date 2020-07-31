@@ -270,9 +270,17 @@ public class List implements ListInterface{
         return null;
     }
 
-
-
-
+    @Override
+    public ListNode rec(ListNode node) {
+        if(node.next ==null){
+            System.out.println(node.toString());
+        }
+        else{
+            System.out.println(node.toString());
+            return rec(node.next);
+        }
+        return null;
+    }
 }
 
 
