@@ -6,6 +6,7 @@ public class List implements ListInterface{
 
     public ListNode head;
     public ListNode tail;
+    public ListNode inode;
     public int size;
 
     public List() {
@@ -13,6 +14,11 @@ public class List implements ListInterface{
         tail = null;
         size = 0;
 
+    }
+
+    public List(Object object){
+        head= new ListNode(object);
+        tail =head;
     }
 
     @Override
@@ -203,21 +209,25 @@ public class List implements ListInterface{
 
     @Override
     public Iterator<ListNode> iterator() {
-        /*
-        Iterator <ListNode> i =new Iterator<ListNode>() {
+        inode = head;
+        Iterator<ListNode> i = new Iterator<ListNode>() {
             @Override
             public boolean hasNext() {
-                return false;
+                return inode.next != null ? true : false;
             }
 
             @Override
             public ListNode next() {
-                return null;
+                if (hasNext()) {
+                    ListNode tmp = inode;
+                    inode = inode.next;
+                    return tmp;
+                } else {
+                    return null;
+                }
             }
-;
-
-         */
-        return null;
+        };
+        return i;
         }
 
     @Override
@@ -260,10 +270,8 @@ public class List implements ListInterface{
         return null;
     }
 
-    public List(Object object){
-        head= new ListNode(object);
-        tail =head;
-    }
+
+
 
 }
 
