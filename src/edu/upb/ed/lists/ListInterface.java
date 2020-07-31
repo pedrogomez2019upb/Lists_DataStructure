@@ -34,7 +34,7 @@ public interface ListInterface
 
     public boolean set(ListNode node, Object object);
 
-    public boolean remove(ListNode node);//Ok
+    public boolean remove(int position);//Ok
 
     /*
     expansion operations

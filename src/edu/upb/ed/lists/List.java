@@ -4,14 +4,26 @@ import java.util.Iterator;
 
 public class List implements ListInterface{
 
-    @Override
-    public boolean isEmpty() {
-        return false;
+    public ListNode head;
+    public ListNode tail;
+    public int size;
+
+    public List() {
+        head = null;
+        tail = null;
+        size = 0;
+
     }
 
     @Override
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+
+    @Override
     public int getSize() {
-        return 0;
+        return size;
     }
 
     @Override
@@ -70,8 +82,15 @@ public class List implements ListInterface{
     }
 
     @Override
-    public boolean remove(ListNode node) {
-        return false;
+    public boolean remove(int position) {
+        ListNode aux = head;
+        for (int i = 0; i < position - 1; i++)
+        {
+            aux = aux.getNext();
+        }
+        ListNode nNext = aux.getNext();
+        aux.setNext(nNext.getNext());
+        size--;
     }
 
     @Override
