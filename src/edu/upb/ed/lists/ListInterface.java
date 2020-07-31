@@ -22,11 +22,11 @@ public interface ListInterface
 
     public Object search(Object object);
 
-    public void add(Object object);
+    public void add(Object object);//Ok
 
-    public void addTail(Object object);
+    public void addTail(Object object);//Ok
 
-    public void addEnd(Object object);
+    public void addEnd(Object object);//Ok
 
     public boolean insert(ListNode node, Object object);
 
@@ -39,6 +39,9 @@ public interface ListInterface
     public boolean set(ListNode node, Object object);
 
     public void remove(int position);//Ok
+
+    public void removeTail(int position);
+
 
 
 

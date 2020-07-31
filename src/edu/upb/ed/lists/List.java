@@ -180,6 +180,18 @@ public class List implements ListInterface{
     }
 
     @Override
+    public void removeTail(int position) {
+        ListNode aux = head;
+        for (int i = 0; i < position - 1; i++)
+        {
+            aux = aux.getNext();
+        }
+        ListNode nNext = aux.getNext();
+        aux.setNext(nNext.getNext());
+        size--;
+    }
+
+    @Override
     public boolean contains(Object object) {
         return false;
     }
@@ -191,8 +203,22 @@ public class List implements ListInterface{
 
     @Override
     public Iterator<ListNode> iterator() {
+        /*
+        Iterator <ListNode> i =new Iterator<ListNode>() {
+            @Override
+            public boolean hasNext() {
+                return false;
+            }
+
+            @Override
+            public ListNode next() {
+                return null;
+            }
+;
+
+         */
         return null;
-    }
+        }
 
     @Override
     public Object[] toArray() {
