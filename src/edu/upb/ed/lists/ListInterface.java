@@ -14,11 +14,11 @@ public interface ListInterface
 
     public void clear(); //Pendiente
 
-    public Object getHead();//SOSO
+    public Object getHead();//Ok
 
-    public Object getTail();//SOSO
+    public Object getTail();//Ok
 
-    public Object get(int index);
+    public Object get(int index);//Ok
 
     public Object search(Object object);
 
@@ -40,7 +40,7 @@ public interface ListInterface
 
     public void remove(int position);//Ok
 
-    public void removeTail(int position);
+    public void removeTail(int position);//Ok
 
 
 
@@ -52,7 +52,7 @@ public interface ListInterface
 
     public boolean isEquals(Object object);
 
-    public Iterator<ListNode> iterator();
+    public Iterator<ListNode> iterator();//Soso
 
     public Object[] toArray();
 
