@@ -18,23 +18,29 @@ public interface ListInterface
 
     public Object getTail();//SOSO
 
-    public Object get(ListNode node);
+    public Object get(int index);
 
     public Object search(Object object);
 
-    public boolean add(Object object);
+    public void add(Object object);
+
+    public void addTail(Object object);
+
+    public void addEnd(Object object);
 
     public boolean insert(ListNode node, Object object);
 
     public boolean insert(Object ob, Object object);
 
-    public boolean insertHead(Object object);
+    public boolean insertHead(Object object);//OK
 
     public boolean insertTail(Object object);
 
     public boolean set(ListNode node, Object object);
 
-    public boolean remove(int position);//Ok
+    public void remove(int position);//Ok
+
+
 
     /*
     expansion operations

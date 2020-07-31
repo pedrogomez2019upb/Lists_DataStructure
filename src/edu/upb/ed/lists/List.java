@@ -42,18 +42,73 @@ public class List implements ListInterface{
     }
 
     @Override
-    public Object get(ListNode node) {
-        return null;
+    public Object get(int index) {
+        int counter=0;
+        ListNode temporalNode=head;
+        while (counter<index){
+            temporalNode=temporalNode.getNext();
+            counter++;
+        }
+        return temporalNode.getObject();
     }
 
     @Override
     public Object search(Object object) {
+        Iterator<ListNode> i = this.iterator();
+        ListNode inode;
+        while (i.hasNext()) {
+
+            inode = i.next();
+            if (inode.getObject().toString().equals(object.toString())) {
+                return inode;
+            }
+        }
         return null;
     }
 
     @Override
-    public boolean add(Object object) {
-        return false;
+    public void add(Object object)
+    {
+        if(head==null){
+            head = new ListNode(object);
+            tail = head;
+        }
+        else
+        {
+            ListNode temporalNode=head;
+            ListNode newNode=new ListNode(object);
+            newNode.linkNext(temporalNode);
+            head=newNode;
+        }
+        size ++;
+    }
+
+    @Override
+    public void addTail(Object object) {
+        if(tail==null){
+            tail = new ListNode(object);
+            head = tail;
+        }
+        else
+        {
+            ListNode temporalNode=tail;
+            ListNode newNode=new ListNode(object);
+            newNode.linkNext(temporalNode);
+            tail=newNode;
+        }
+        size ++;
+    }
+
+    @Override
+    public void addEnd(Object object)
+    {
+        if(!isEmpty()){
+            tail.next=new ListNode(object);
+            tail=tail.next;
+        }else {
+            head=tail=new ListNode(object);
+        }
+        size++;
     }
 
     @Override
@@ -63,7 +118,24 @@ public class List implements ListInterface{
 
     @Override
     public boolean insert(Object ob, Object object) {
-        return false;
+        try {
+            if (ob != null) {
+                ListNode inode = (ListNode) this.search(ob);
+                if (inode.next == null) {
+                    add(object);
+                } else {
+                    ListNode newNode = new ListNode(object);
+                    newNode.next = inode.next;
+                    inode.next = newNode;
+                    size++;
+                }
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     @Override
@@ -73,7 +145,20 @@ public class List implements ListInterface{
 
     @Override
     public boolean insertTail(Object object) {
-        return false;
+        try {
+            if (isEmpty()) {
+                head = new ListNode(object);
+                tail = head;
+                size++;
+            } else {
+                tail.next = new ListNode(object);
+                tail = tail.next;
+                size++;
+            }
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     @Override
@@ -82,7 +167,8 @@ public class List implements ListInterface{
     }
 
     @Override
-    public boolean remove(int position) {
+    public void remove(int position)
+    {
         ListNode aux = head;
         for (int i = 0; i < position - 1; i++)
         {
@@ -147,6 +233,12 @@ public class List implements ListInterface{
     public List sortList() {
         return null;
     }
+
+    public List(Object object){
+        head= new ListNode(object);
+        tail =head;
+    }
+
 }
 
 
