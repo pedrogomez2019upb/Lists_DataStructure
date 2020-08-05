@@ -13,7 +13,7 @@ public interface ListInterface
 
     public int getSize(); //Ok
 
-    public void clear(); //Pendiente
+    public void clear(); //Ok
 
     public Object getHead();//Ok
 

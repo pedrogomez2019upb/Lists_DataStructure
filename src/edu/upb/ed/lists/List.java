@@ -28,18 +28,27 @@ public class List implements ListInterface{
 
 
     @Override
-    public int getSize() {
+    public int getSize()
+    {
         return size;
     }
 
     @Override
     public void clear() {
-
+        head=null;
+        tail=null;
     }
 
     @Override
-    public Object getHead() {
-        return null;
+    public Object getHead()
+    {
+        int counter=0;
+        ListNode temporalNode=head;
+        while (counter<0)
+        {
+            temporalNode=temporalNode.getNext();
+        }
+        return temporalNode.getObject();
     }
 
     @Override
