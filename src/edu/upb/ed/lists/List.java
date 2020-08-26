@@ -208,11 +208,27 @@ public class List implements ListInterface{
 
     @Override
     public boolean contains(Object object) {
-        return false;
+        ListNode temporalNode = head;
+        boolean result = false;
+        while (temporalNode.next != null) {
+            temporalNode = temporalNode.next;
+            if (temporalNode == object) {
+                result = true;
+                break;
+            }
+        }
+        return result;
     }
 
     @Override
     public boolean isEquals(Object object) {
+        ListNode temporalNode = head;
+        while (temporalNode.next != null) {
+            if (temporalNode.getObject().toString().equals(object.toString())) {
+                return true;
+            }
+            temporalNode = temporalNode.next;
+        }
         return false;
     }
 
@@ -241,12 +257,28 @@ public class List implements ListInterface{
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+        Object[] newArray= new Object[size];
+        ListNode temporalNode= head;
+        for (int i=0; i<size; i++){
+            newArray[i]=temporalNode;
+            temporalNode= temporalNode.next;
+        }
+        return newArray;
     }
 
     @Override
     public Object[] toArray(Object[] object) {
-        return new Object[0];
+        ListNode node = head;
+        int sizeArray = object.length;
+        int x = 0;
+        object = new Object[size];
+        object[0] = head.getObject();
+        do {
+            node = node.next;
+            x++;
+            object[x] = node.getObject();
+        } while (x <= sizeArray);
+        return object;
     }
 
     @Override
