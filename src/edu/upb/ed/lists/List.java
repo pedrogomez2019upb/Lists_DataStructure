@@ -303,7 +303,20 @@ public class List implements ListInterface{
 
     @Override
     public List subList(ListNode from, ListNode to) {
-        return null;
+        List newList = new List();
+        ListNode temporalNode = head;
+        while (temporalNode.next != null) {
+            temporalNode = temporalNode.next;
+            if (temporalNode == from) {
+                newList.add(temporalNode);
+                while (temporalNode != to) {
+                    temporalNode = temporalNode.next;
+                    newList.add(temporalNode);
+                }
+                break;
+            }
+        }
+        return newList;
     }
 
     @Override
