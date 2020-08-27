@@ -17,6 +17,9 @@ public class Main {
         System.out.println("\n"+list1.getHead());
         System.out.println("\n###################");
 
+        System.out.println("\n###################");
+        System.out.println("\n"+list1.getTail());
+        System.out.println("\n###################");
 	/*
         for(int i=10;i<20;i++){
             list1.addTail(i);
