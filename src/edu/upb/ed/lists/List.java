@@ -37,6 +37,7 @@ public class List implements ListInterface{
     public void clear() {
         head=null;
         tail=null;
+        size=0;
     }
 
     @Override
@@ -85,6 +86,14 @@ public class List implements ListInterface{
     @Override
     public void add(Object object)
     {
+        if(!isEmpty()){
+            tail.next=new ListNode(object);
+            tail=tail.next;
+        }else {
+            head=tail=new ListNode(object);
+        }
+        size++;
+        /*
         if(head==null){
             head = new ListNode(object);
             tail = head;
@@ -97,6 +106,7 @@ public class List implements ListInterface{
             head=newNode;
         }
         size ++;
+         */
     }
 
     @Override
@@ -189,39 +199,33 @@ public class List implements ListInterface{
 
     @Override
     public boolean set(ListNode node, Object object) {
-        if (isEmpty()) {
-            return false;
-        }
-        ListNode temporalNode = head;
-        while (temporalNode != null) {
-            temporalNode = temporalNode.next;
-            if (temporalNode.equals(node)) {
-                temporalNode.setObject(object);
-                return true;
-            }
-        }
         return false;
     }
 
     @Override
     public boolean remove(ListNode node)
     {
-        ListNode temporalNode=head;
-        ListNode actualNode=head;
-        if(actualNode==node){
-            head=actualNode.next;
-        }else {
-            while (actualNode.next != null ) {
-                if (actualNode == node){
+        ListNode temporalNode = head;
+        ListNode actualNode = head;
+        if (actualNode == node) {
+            head = actualNode.next;
+            size--;
+
+        } else {
+            while (actualNode.next != null) {
+
+                if (actualNode == node) {
                     break;
                 }
                 temporalNode = actualNode;
                 actualNode = actualNode.next;
             }
-            tail=temporalNode;
-            tail.next= actualNode.next;
+
+            tail = temporalNode;
+            tail.next = actualNode.next;
+            size--;
+
         }
-        size--;
         return true;
     }
 
@@ -273,7 +277,7 @@ public class List implements ListInterface{
             }
         };
         return i;
-        }
+    }
 
     @Override
     public Object[] toArray() {
@@ -355,6 +359,8 @@ public class List implements ListInterface{
         }
         return null;
     }
+
+
 }
 
 
